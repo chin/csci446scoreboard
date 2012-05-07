@@ -1,5 +1,5 @@
 class BoardController < ApplicationController
-  respond_to :json
+  
   def create
   	@score = board.new(:name => params[:name], :score => params[:score])
     respond_to do |format|
