@@ -30,7 +30,6 @@ function gameLogic(){
     updateView("<b>THE GALACTIC EMPIRE SALUTES YOU!</b>");
     biWinning();
     populateHighScores(highScores);
-    return;
   }else if(guess<answer && guessesLeft>0){
     valuer("TOO LOW!");
   }else if(guess>answer && guessesLeft>0){
@@ -56,7 +55,7 @@ function biWinning(){
 
 function valuer(text){
   updateView(text);
-  guessesLeft = guessesLeft-1 ;
+  guessesLeft = guessesLeft-1;
   updateScore(guessesLeft);
 }
 
@@ -70,12 +69,12 @@ function compareNumbers(a, b) {
 }
 
 function reset(){
-  guessesLeft = 10;
-  answer = Math.floor(Math.random() * 101);
+  var guessesLeft = 10;
+  var answer = Math.floor(Math.random() * 101);
   updateScore(guessesLeft);
   populateHighScores(highScores);
   document.getElementById( "guess" );
-  guess = parseFloat( input.value );
+  var guess = parseFloat( input.value );
 }
 
 funtion to_db(name, score){
