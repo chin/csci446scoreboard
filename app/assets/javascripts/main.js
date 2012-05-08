@@ -19,7 +19,8 @@ function populateHighScores(scores) {
 }
 
 function updateScore(score) {
-  $('h2#score span#guessesLeft').append(score);
+  //$('h2#score span#guessesLeft').append(score);
+  document.getElementById("guessesLeft").innerHTML= score;
 }
 
 function gameLogic(){
@@ -35,7 +36,7 @@ function gameLogic(){
   }else if(guess>answer && guessesLeft>0){
     valuer("TOO HIGH!");
   }else{
-    updateView("<b>BOO YOU WHORE!</b>");
+    alert("<b>BOO YOU WHORE! Play Again</b>");
     reset();
   }
   gLeft();
@@ -78,5 +79,5 @@ function reset(){
 }
 
 funtion to_db(name, score){
-  $.post(db, { "name": userName, "score": score});
+  $.post(db, { "name": name, "score": score});
 }
