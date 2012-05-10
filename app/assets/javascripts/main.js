@@ -35,7 +35,7 @@ function gameLogic(){
   }else if(guess>answer && guessesLeft>0){
     valuer("TOO HIGH!");
   }else{
-    alert("<b>BOO YOU WHORE! Play Again</b>");
+    alert("BOO YOU WHORE! Play Again");
     reset();
   }
   gLeft();
