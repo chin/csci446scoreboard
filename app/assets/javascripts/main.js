@@ -76,6 +76,6 @@ function reset(){
   var guess = parseFloat( input.value );
 }
 
-funtion to_db(name, score){
+function to_db(name, score){
   $.post(db, { "name": name, "score": score});
 }
