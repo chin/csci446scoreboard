@@ -3,8 +3,9 @@ class BoardController < ApplicationController
   def create
   	@score = board.new(:name => params[:name], :score => params[:score])
     respond_to do |format|
-    if @score.save
-      format.json { render :json => @score, :status => :created, :location => @score }
+      if @score.save
+        format.json { render :json => @score, :status => :created, :location => @score }
+      end
     end
   end
 

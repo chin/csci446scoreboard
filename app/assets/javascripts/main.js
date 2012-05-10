@@ -8,19 +8,19 @@ $(function() {
   populateHighScores(boards);
 });
 
-function populateHighScores(scores) {
+function populateHighScores(boards) {
   //scores.sort(compareNumbers);
-  $.get(db, function(scores){
+  $.get(db, function(boards){
     $('div#highScores').empty();
-    for (var i = 0; i < scores.length; ++i) {
-      $('div#highScores').append("<p>" + scores[i].name + " " + scores[i].score + "</p>");
+    for (var i = 0; i < boards.length; ++i) {
+      $('div#highScores').append("<p>" + boards[i].name + " " + boards[i].score + "</p>");
     }
   });
 }
 
-function updateScore(score) {
+function updateScore(board) {
   //$('h2#score span#guessesLeft').append(score);
-  document.getElementById("guessesLeft").innerHTML= score;
+  document.getElementById("guessesLeft").innerHTML= board;
 }
 
 function gameLogic(){
