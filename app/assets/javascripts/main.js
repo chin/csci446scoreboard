@@ -20,6 +20,7 @@ function populateHighScores() {
 }
 
 function updateScore(board) {
+  $('h2#score span#guessesLeft').empty();
   $('h2#score span#guessesLeft').append(board);
 }
 
