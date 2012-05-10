@@ -5,6 +5,6 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
-board.create(:name => 'HarryJamesPotter', :score => 9)
-board.create(:name => 'ZedCthulhu', :score => 3)
-board.create(:name => 'NearlyDied', :score => 2)
+boards.create(:name => 'HarryJamesPotter', :score => 9)
+boards.create(:name => 'ZedCthulhu', :score => 3)
+boards.create(:name => 'NearlyDied', :score => 2)
