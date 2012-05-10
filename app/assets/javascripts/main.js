@@ -2,6 +2,8 @@ var guessesLeft = 10;
 //var highScores = new Array([9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
 var answer = Math.floor(Math.random() * 101);
 var db = "http://empty-fire-4863.herokuapp.com/highscores";
+var score;
+var scores;
 
 $(function() {
   updateScore(guessesLeft);
@@ -10,7 +12,7 @@ $(function() {
 
 function populateHighScores(scores) {
   //scores.sort(compareNumbers);
-  $.get(db, function(scores) {
+  $.get(db, function(scores){
     $('div#highScores').empty();
     for (var i = 0; i < scores.length; ++i) {
       $('div#highScores').append("<p>" + scores[i].name + " " + scores[i].score + "</p>");
