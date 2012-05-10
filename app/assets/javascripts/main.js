@@ -19,8 +19,7 @@ function populateHighScores(boards) {
 }
 
 function updateScore(board) {
-  //$('h2#score span#guessesLeft').append(score);
-  document.getElementById("guessesLeft").innerHTML= board;
+  $('h2#score span#guessesLeft').append(board);
 }
 
 function gameLogic(){
