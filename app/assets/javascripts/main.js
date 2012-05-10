@@ -2,13 +2,14 @@ var guessesLeft = 10;
 //var highScores = new Array([9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
 var answer = Math.floor(Math.random() * 101);
 var db = "http://empty-fire-4863.herokuapp.com/boards";
+var boards;
 
 $(function() {
   updateScore(guessesLeft);
-  populateHighScores(boards);
+  populateHighScores();
 });
 
-function populateHighScores(boards) {
+function populateHighScores() {
   //scores.sort(compareNumbers);
   $.get(db, function(boards){
     $('div#highScores').empty();
@@ -28,7 +29,7 @@ function gameLogic(){
   if(guess==answer && guessesLeft>0){
     updateView("<b>THE GALACTIC EMPIRE SALUTES YOU!</b>");
     biWinning();
-    populateHighScores(boards);
+    populateHighScores();
   }else if(guess<answer && guessesLeft>0){
     valuer("TOO LOW!");
   }else if(guess>answer && guessesLeft>0){
@@ -71,7 +72,7 @@ function reset(){
   var guessesLeft = 10;
   var answer = Math.floor(Math.random() * 101);
   updateScore(guessesLeft);
-  populateHighScores(boards);
+  populateHighScores();
   document.getElementById( "guess" );
   var guess = parseFloat( input.value );
 }
